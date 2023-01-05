@@ -18,7 +18,6 @@ def main():
     a = mydata[x]
     return a 
 
-
 @app.route("?/admin", methods=["POST"])
 def admin():
     t = open('quotes.txt', 'r')
