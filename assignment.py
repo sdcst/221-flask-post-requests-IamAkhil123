@@ -1,31 +1,29 @@
 #!python3
-from flask import Flask,request
+import random as r 
+from flask import Flask, request
 from flask_cors import CORS
-import json
+import time, json 
+import random 
+
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/post",methods=["POST"])
-def postResponse():
-    # a simple echo server that response with the payload received.
-    payload = request.form
-    data = dict(payload)
-    print(data)
-    return json.dumps(data)
-
-app.run()
-
-
+@app.route("/", methods=["POST"])
+def main():
+    x = random.randint(0)
+    file = 'quotes.txt'
+    t = open(file, 'r')
+    data = t.read()
+    mydata = data.split('\n')
+    a = mydata[x]
+    return a 
 
 
-import requests
-
-url = 'https://www.w3schools.com/python/demopage.php'
-myobj = {'somekey': 'somevalue'}
-
-x = requests.post(url, json = myobj)
-
-#print the response text (the content of the requested file):
-
-print(x.text)
+@app.route("?/admin", methods=["POST"])
+def admin():
+    t = open('quotes.txt', 'r')
+    data = t.read()
+    mydata = data.split('\n')
+    return mydata
+app.run()   
 
