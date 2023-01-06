@@ -1,4 +1,3 @@
-#!python3
 #!python
 from flask import Flask,request
 from flask_cors import CORS
@@ -20,7 +19,7 @@ def postResponse():
     saf=data['get']
     if saf!='bce52a22495d704233dd4e720e942dbf63d0561ed813d77fd38776357db7108e':
         return 'incorect'
-    file = 'quoteholder.db'
+    file = 'quote.db'
     connection = sqlite3.connect(file)
     print(connection)
 
