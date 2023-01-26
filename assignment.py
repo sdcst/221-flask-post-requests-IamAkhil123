@@ -1,5 +1,4 @@
 #!python
-
 from flask import Flask, request, render_template
 from flask_cors import CORS
 import random
@@ -9,8 +8,8 @@ web = Flask(__name__)
 CORS(web)
 
 def textfile():
-    quotes = ["We cannot solve problems with the kind of thinking we employed when we came up with them.","Learn as if you will live forever, live like you will die tomorrow.","Stay away from those people who try to disparage your ambitions. Small minds will always do that, but great minds will give you a feeling that you can become great too.","When you give joy to other people, you get more joy in return. You should give a good thought to happiness that you can give out.","When you change your thoughts, remember to also change your world.","Success is not final; failure is not fatal: It is the courage to continue that counts.","It is better to fail in originality than to succeed in imitation."]
-    file = open("entry.txt", "w")
+    quotes = ["My unmatched perspicacity coupled with sheer indefatigability makes me a feared opponent in any realm of human endeavor.", "The truth is crazy in a world full of lies", ]
+    file = open("quotes.txt", "w")
     for i in quotes:
         i +="\n"
         file.write(i)
